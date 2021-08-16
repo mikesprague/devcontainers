@@ -10,15 +10,11 @@
 
 ## Contents
 
-- Node.js
+- Node.js v16.x
 - [Yarn](https://yarnpkg.com/) package manager
-- Zsh (set as default shell)
-- [Oh My Zsh](https://ohmyz.sh/) installed with autocomplete and autosuggest plugins installed/enabled
-- [Starship](https://starship.rs/) prompt installed and enabled
 - [n](https://github.com/tj/n) Node.js version manager installed (defaults to Node.js v16 with v14 also installed)
 
 ### VS Code Extensions installed on first use
 
 - See the extensions section in [devcontainer.json](./.devcontainer/devcontainer.json)
 - NOTE: WIP - lots of extensions can be removed/commented out
-
