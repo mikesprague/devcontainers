@@ -6,7 +6,7 @@ ARG VARIANT=14
 FROM mcr.microsoft.com/azure-functions/node:3.0-node${VARIANT}-core-tools
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-  && apt-get -y install --no-install-recommends vim zsh curl wget zip unzip
+  && apt-get -y install --no-install-recommends zsh git vim curl wget zip unzip
 
 RUN su node -c "npm install -g npm gitmoji-cli npm-check-updates"
 
