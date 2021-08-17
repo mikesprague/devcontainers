@@ -9,8 +9,8 @@
 
   // Set *default* container specific settings.json values on container create.
   "settings": {
-     "git.enableCommitSigning": true,
-     "terminal.integrated.defaultProfile.linux": "zsh"
+    "git.enableCommitSigning": true,
+    "terminal.integrated.defaultProfile.linux": "zsh"
   },
 
   // Add the IDs of extensions you want installed when the container is created.
@@ -117,6 +117,7 @@
     "urbantrout.refactor-css",
     "vincaslt.highlight-matching-tag",
     "VisualStudioExptTeam.vscodeintellicode",
+    "vscode-icons-team.vscode-icons",
     "waderyan.gitblame",
     "WallabyJs.quokka-vscode",
     "wayou.vscode-todo-highlight",
