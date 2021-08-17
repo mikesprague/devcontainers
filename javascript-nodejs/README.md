@@ -1,4 +1,4 @@
-# nodejs-ohmyzsh-starship
+# javascript-nodejs
 
 ## Basic Usage
 

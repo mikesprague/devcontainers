@@ -1,4 +1,4 @@
-# nodejs-azurefunctions-ohmyzsh-starship
+# azure-functions-nodejs
 
 ## Basic Usage
 
