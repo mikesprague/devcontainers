@@ -10,9 +10,9 @@ Inside your project root directory (example uses `javascript-nodejs` devcontaine
 2. `cd .devcontainer`
 3. `npx -y degit https://github.com/mikesprague/devcontainers.git/javascript-nodejs/.devcontainer`
 
-Add the new folder to your repo and push the changes to GitHub. 
+Add the new folder to your repo and push the changes to GitHub
 
-You can now start the customized devcontainer from your repo or VS Code.
+You can now start the customized devcontainer from your repo or VS Code
 
 ## Devcontainer contents
 
