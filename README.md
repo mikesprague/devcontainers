@@ -16,7 +16,7 @@ You can now start the customized devcontainer from your repo or VS Code.
 
 ## Devcontainer contents
 
-Look at README files in each sub folder for more information
+Look at README files in each sub folder for more information and alternate install instructions
 
 ### Common to each of my devcontainers
 
