@@ -27,8 +27,8 @@ RUN rm -rf /root/.oh-my-zsh \
   && git clone --quiet https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions \
   && sed -i 's/ZSH_THEME="robbyrussell"/# ZSH_THEME="robbyrussell"/g' ~/.zshrc \
   && sed -i 's/# HYPHEN_INSENSITIVE=/HYPHEN_INSENSITIVE=/g' ~/.zshrc \
-  && sed -i 's/plugins=(git)/plugins=(git zsh-completions zsh-autosuggestions)/g' ~/.zshrc \
-  && sed -i '/plugins=(git zsh-completions zsh-autosuggestions)/a autoload -U compinit && compinit' ~/.zshrc
+  && sed -i 's/plugins=(git)/plugins=(git zsh-completions zsh-autosuggestions npm yarn)/g' ~/.zshrc \
+  && sed -i '/plugins=(git zsh-completions zsh-autosuggestions npm yarn)/a autoload -U compinit && compinit' ~/.zshrc
 
 # set some git aliases and options
 RUN git config  --global --add alias.st status \
