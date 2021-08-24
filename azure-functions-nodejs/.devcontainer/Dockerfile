@@ -16,8 +16,13 @@ RUN export DEBIAN_FRONTEND=noninteractive \
   && sudo apt-get update \
   && sudo apt-get -y install gh
 
-# install some global npm dependencies
-RUN npm install -g npm gitmoji-cli npm-check-updates
+# remove existing yarn executable (or latest version won't install)
+# and install some global npm dependencies
+RUN rm -rf /usr/bin/yarn \
+  npm install -g npm n gitmoji-cli npm-check-updates yarn
+
+# use n (node version manager) to make sure we're on latest v14 of nodejs
+RUN n 14 && npm i -g npm
 
 # install and customize oh-my-zsh
 RUN rm -rf /root/.oh-my-zsh \
@@ -30,15 +35,18 @@ RUN rm -rf /root/.oh-my-zsh \
   && sed -i 's/plugins=(git)/plugins=(git zsh-completions zsh-autosuggestions npm yarn)/g' ~/.zshrc \
   && sed -i '/plugins=(git zsh-completions zsh-autosuggestions npm yarn)/a autoload -U compinit && compinit' ~/.zshrc
 
-# set some git aliases and options
-RUN git config  --global --add alias.st status \
+# set some shell aliases and options and set some git aliases and options
+RUN echo '\nalias la="ls -lah"\nalias cl="clear"\nalias npmgls="npm -g ls --depth=0"\n' >> ~/.zshrc \
+  && echo '\nalias aptupdate="sudo apt update && sudo apt upgrade"\n' >> ~/.zshrc \
+  && echo '\nalias alias ncud="ncu --dep dev -u && yarn"\nalias ncup="ncu --dep prod -u && yarn"\n' >> ~/.zshrc \
+  && echo '\n\nexport LS_COLORS="su=00:sg=00:ca=00:ow=01;36;40"\n' >> ~/.zshrc \
+  && echo '\nzstyle ":completion:*" list-colors "${(@s.:.)LS_COLORS}"\n' >> ~/.zshrc \
+  && echo '\neval "$(gh completion --shell zsh)"\n' >> ~/.zshrc \
+  && git config  --global --add alias.st status \
   && git config --global --add alias.lsd 'log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate' \
   && git config --global --add commit.gpgsign true \
   && git config --global --add tag.gpgsign true \
   && git config --global --add tag.tag.forcesignannotated true
-
-# set some shell aliases 
-RUN echo '\nalias la="ls -lah"\nalias cl="clear"\nalias npmgls="npm -g ls --depth=0"\n' >> ~/.zshrc
 
 # install starship shell promopt
 RUN sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes \
