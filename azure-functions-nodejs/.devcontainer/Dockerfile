@@ -19,7 +19,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 # remove existing yarn executable (or latest version won't install)
 # and install some global npm dependencies
 RUN rm -rf /usr/bin/yarn \
-  npm install -g npm n gitmoji-cli npm-check-updates yarn
+  && npm install -g npm n gitmoji-cli npm-check-updates yarn
 
 # use n (node version manager) to make sure we're on latest v14 of nodejs
 RUN n 14 && npm i -g npm
