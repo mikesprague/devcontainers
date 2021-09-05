@@ -30,10 +30,11 @@ RUN rm -rf /root/.oh-my-zsh \
   && chsh -s /bin/zsh \
   && git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
   && git clone --quiet https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions \
+  && git clone --quiet https://github.com/sobolevn/wakatime-zsh-plugin.git ~/.oh-my-zsh/custom/plugins/wakatime \
   && sed -i 's/ZSH_THEME="robbyrussell"/# ZSH_THEME="robbyrussell"/g' ~/.zshrc \
   && sed -i 's/# HYPHEN_INSENSITIVE=/HYPHEN_INSENSITIVE=/g' ~/.zshrc \
-  && sed -i 's/plugins=(git)/plugins=(git zsh-completions zsh-autosuggestions npm yarn)/g' ~/.zshrc \
-  && sed -i '/plugins=(git zsh-completions zsh-autosuggestions npm yarn)/a autoload -U compinit && compinit' ~/.zshrc
+  && sed -i 's/plugins=(git)/plugins=(git zsh-completions zsh-autosuggestions npm yarn wakatime)/g' ~/.zshrc \
+  && sed -i '/plugins=(git zsh-completions zsh-autosuggestions npm yarn wakatime)/a autoload -U compinit && compinit' ~/.zshrc
 
 # set some shell aliases and options and set some git aliases and options
 RUN echo '\nalias la="ls -lah"\nalias cl="clear"\nalias npmgls="npm -g ls --depth=0"\n' >> ~/.zshrc \
