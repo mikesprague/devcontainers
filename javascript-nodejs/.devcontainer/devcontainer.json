@@ -17,6 +17,8 @@
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontFamily": "Operator Mono Lig, Dank Mono, Cascadia Code, Victor Mono, Fira Code",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active"
   },
 
   // Add the IDs of extensions you want installed when the container is created.
